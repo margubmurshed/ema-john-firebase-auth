@@ -1,0 +1,13 @@
+.products-title{
+    margin-bottom: 20px
+}
+.products-container{
+    padding: 20px;
+}
+
+.product-items-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    gap: 20px;
+}
