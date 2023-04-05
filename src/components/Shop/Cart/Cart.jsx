@@ -17,17 +17,6 @@ const Cart = ({cartProducts, handleClearCart}) => {
                     <p>Tax : ${tax.toFixed(2)}</p>
                     <p>Grand Total : ${grandTotal.toFixed(2)}</p>
                 </div>
-                <div className="cart-products">
-                    {cartProducts.map(product => (
-                        <div className="cart-product">
-                            <img src={product.img} alt={product.name} className="cart-product-img"/>
-                            <div>
-                                <h3 className='cart-product-name'>{product.name}</h3>
-                                <p>${product.price} X {product.quantity}</p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
                 <div className="cart-buttons">
                     <button className="clear-cart-btn" onClick={handleClearCart}>Clear Cart</button>
                     <button className="review-order-btn">Review Order</button>

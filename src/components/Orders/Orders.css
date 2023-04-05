@@ -1,0 +1,24 @@
+.cart-products-container{
+    padding: 20px;
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.no-orders{
+    width: 100%;
+    height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(225, 225, 225);
+}
+
+@media screen and (max-width: 768px) {
+    .cart-products-container{
+        width: 100%;
+    }
+    
+}

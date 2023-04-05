@@ -17,7 +17,7 @@ const Header = () => {
               <Link to="/shop">Shop</Link>
             </li>
             <li>
-              <Link to="/order-review">Order Review</Link>
+              <Link to="/orders">Orders</Link>
             </li>
             <li>
               <Link to="/manage-inventory">Manage Inverntory</Link>

@@ -19,7 +19,7 @@ const Products = ({
   }, []);
   return (
     <>
-      <section className="products-container">
+      <section className="products-container container">
         <h2 className="products-title">Total Products : {products.length}</h2>
         <div className="product-items-container">
           {products.map((product) => {
