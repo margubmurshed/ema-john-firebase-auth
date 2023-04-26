@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Cart from '../Shop/Cart/Cart';
 import OrderItem from './Order/OrderItem';
 import './Orders.css'
-import { removeFromDb } from '../../utilities/fakedb';
+import { deleteShoppingCart, removeFromDb } from '../../utilities/fakedb';
 
 const Orders = () => {
     const savedCartProducts = useLoaderData();
@@ -14,6 +14,11 @@ const Orders = () => {
         setCartProducts(restCartProducts)
         removeFromDb(id);
     }
+
+    const handleClearCart = () => {
+        setCartProducts([]);
+        deleteShoppingCart();
+      };
     return (
             <>
                 {cartProducts.length ? (
@@ -21,7 +26,9 @@ const Orders = () => {
                     <div className='cart-products-container'>
                         {cartProducts.map(cartProduct => <OrderItem cartProduct={cartProduct} deleteCartProduct={deleteCartProduct} key={cartProduct.id}/>)}
                     </div>
-                    <Cart cartProducts={cartProducts}/>
+                    <Cart cartProducts={cartProducts} handleClearCart={handleClearCart}>
+                        <Link to="/checkout" className="review-order-btn">Proceed To Checkout</Link>
+                    </Cart>
                 </div>
                 ) : (
                     <div className='no-orders'>
